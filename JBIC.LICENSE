@@ -1,0 +1,30 @@
+Terms and Conditions of License for Use of "myPresto"
+
+　Japan Biological Informatics Consortium (hereinafter referred to as "JBIC") has developed, in "Structural proteomics project" commissioned by the government of Japan, the molecular simulation system with the following functions:
+　 (1) conversion of a two-dimensional structure of a compound to its three-dimensional structure
+　 (2) protein modeling
+　 (3) protein-drug docking
+　 (4) in silico screening
+　 A group of the programs consisting of the molecular simulation system is referred to as "myPresto" (Medicinally Yielding PRotein Engineering SimulaTOr), which is licensed free of charge to a person who accepts the following Terms and Conditions of License ("Person" shall mean an individual, corporation or institute, and is hereinafter referred to as "user".).
+
+1. Definitions
+"myPresto" includes the abovementioned group of programs consisting of the molecular simulation system, the design specification, the instruction manual and the references.
+
+2. Scope of Free Use
+(1) The user can use "myPresto" with free charge in the following cases:
+(A) when the user uses "myPresto" for the own purpose of the user
+(B) when the user uses copied or modified "myPresto", or uses "myPresto" incorporated into another software for the own purpose of the user
+(2) The Scope of Free Use described in (1) does not cover the case when the user uses "myPresto" for a third party. In this case, the user should consult with JBIC directly.
+
+3. Publication of Results 
+The user must clearly indicate that "myPresto" was used, in the following cases:
+(1) when the user publishes a result by using "myPresto"
+(2) when the user publishes a result by using modified "myPresto" or by using a software incorporating "myPresto"
+(3) when the user publishes a modified part of "myPresto" modified by the user.
+
+4. No Warranty
+JBIC dose not warrant or guarantee the quality, performance, or use results of "myPresto" for the user. The user agrees that the user downloads or uses "myPresto" on user’s own responsibility, and if problem occurs through downloading or using "myPresto", the user shall be responsible for all consequences, including compensation to any third party.
+
+5. Breach of the Terms and Conditions
+If the user breaches the Terms and Conditions, the license shall be terminated.
+In this case, "myPresto" (including copied "myPresto") shall be deleted.
