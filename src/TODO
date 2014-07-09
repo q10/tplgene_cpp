@@ -1,0 +1,77 @@
+main.c
+tgCheckCoordinate.c
+tgCreateFortranData.c
+tgGenerateCoordinate.c
+
+tgMakeTopology.c
+tgMkTopologyOfMetals.c
+tgMkTplAmber.c
+tgMkTplCharmm.c
+tgMkTplDNAAmber.c
+
+tgOutputCoordinate.c
+tgOutputTopology.c
+tgRenameRes_list.c
+tgSetCoordinate.c
+tgSetCoordinateOfMetals.c
+tgSetTorsion.c
+
+checkResidueNumber(FFDB &DB, const string &coordfile)					//sdata.hetatms = 1;
+
+
+
+NEED TO USE tellg and seekg TO UNDO GETLINES FOR TPL!!!
+NEED TO ADD CODE to clear stuff out first when running loadFromDNA/loadFromAA/loadFromDihed
+number of molecules in loadDihed
+// update resinfo and atominfo in loadDNA
+
+
+
+tgReadInputSequence
+
+
+			tgCapTerminal.c --> cap the terminals properly --> move to PDBFile or its own TerminalCap class?
+
+
+DONE			tgReadInputSequence.c::tgCheckNonStdRes --> check that the chains contain all ATOM or all HETATM
+					looks like tgCheckInputPDB.c already has this though...
+
+
+DONE			tgCheckInputPDB.c --> small checks, currently unknown --> probably move to PDBFile -
+					move REMARK into its own tmp db - only save lines, not positions
+
+			==== pause here ====
+
+
+done?			tgReadPdb.c --> clean-up-pdb-file-from-structural-perspective? - PDBStruct - need to verify code
+
+			tgCheckSS.c --> extract SSbond info from pdb into tables for later - but this looks like PDBStruct->autoSSDetection()
+
+			tgModify4LackedRes1
+
+			finally, read stuff into TGStructs, AA/NA/Dihed, take the SSBond tables into here
+DONE?				tgReadAminoSequence.c --> post-process molecule names!!!
+DONE				tgReadDNASequence.c
+DONE				tgReadDihedral.c
+
+
+tgCheckResNames
+
+if metals
+	tgReadPDBFileOfMetals.c
+	tgReadTopologyOfMetals.c
+
+
+tgMakeTopology
+
+tgMkTopologyOfMetals
+
+
+tgModifyResName
+
+
+
+
+make cyclo corrections
+	tgCycloCorrection.c
+	tgCycloCorrectionCharmm.c
