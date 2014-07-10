@@ -107,9 +107,9 @@ namespace TG {
 			outputCoordFormat = use_stdpdb ? PDBFormat::STANDARD : PDBFormat::PRESTO;
 			waterModel = (water_model == "TIP4P") ? WaterModel::TIP4P : WaterModel::TIP3P;
 			inputCoordFormat = (input_format == "DIHED") ? FileFormat::DIHED : FileFormat::PDB;
-			chainType = (chain_type == "NUC") ? ChainSpecies::NUCLEOTIDE : (chain_type == "COM") ? ChainSpecies::COMPOUND : ChainSpecies::PEPTIDE;
+			chainType = (chain_type == "NUC") ? PDB::ChainSpecies::NUCLEOTIDE : (chain_type == "COM") ? PDB::ChainSpecies::COMPOUND : PDB::ChainSpecies::PEPTIDE;
 
-			if (chainType == ChainSpecies::COMPOUND) inputCoordFormat = FileFormat::PDB;
+			if (chainType == PDB::ChainSpecies::COMPOUND) inputCoordFormat = FileFormat::PDB;
 
 			// defaults C99_aa.tpl C99_na.tpl
 			// read envfile instead of reading in terminal .data.inp
@@ -121,26 +121,26 @@ namespace TG {
 				string line; std::getline( fffile, line );
 				if (line.compare(0, 9, ";Amber_aa") == 0) {
 					forceFieldType = FFType::AMBER;
-					if (chainType == ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Amino Acid", "Nucleotide");
+					if (chainType == PDB::ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Amino Acid", "Nucleotide");
 
 				} else if (line.compare(0, 9, ";Amber_na") == 0) {
 					forceFieldType = FFType::AMBER;
-					if (chainType != ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Nucleotide", "Amino Acid");
+					if (chainType != PDB::ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Nucleotide", "Amino Acid");
 
 				} else if (line.compare(0, 12, ";CHARMm19_aa") == 0 or line.compare(0, 12, ";CHARMm22_aa") == 0) {
 					forceFieldType = (line.compare(0, 12, ";CHARMm19_aa") == 0) ? FFType::CHARMM19 : FFType::CHARMM22;
-					if (chainType == ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Amino Acid", "Nucleotide");
+					if (chainType == PDB::ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Amino Acid", "Nucleotide");
 
 				} else if (line.compare(0, 12, ";CHARMm19_na") == 0 or line.compare(0, 12, ";CHARMm22_na") == 0) {
 					forceFieldType = (line.compare(0, 12, ";CHARMm19_aa") == 0) ? FFType::CHARMM19 : FFType::CHARMM22;
-					if (chainType != ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Nucleotide", "Amino Acid");
+					if (chainType != PDB::ChainSpecies::NUCLEOTIDE) fileTypeErrorExit("Nucleotide", "Amino Acid");
 
 				} else {
 					cerr << "\nFirst line of Force Field DB does not contain descriptor of the force field! Exiting...\n"; std::exit(1);
 				}
 			}
 
-			if (chainType == ChainSpecies::NUCLEOTIDE and (forceFieldType == FFType::CHARMM19 or forceFieldType == FFType::CHARMM22)) {
+			if (chainType == PDB::ChainSpecies::NUCLEOTIDE and (forceFieldType == FFType::CHARMM19 or forceFieldType == FFType::CHARMM22)) {
 				cerr << "\n ERROR> tgReadEnv\n"
 					 << "       Selection Error!\n"
 					 << "       Nucleotide Calculation for CHARMM type under construction now.\n"; std::exit(3);
